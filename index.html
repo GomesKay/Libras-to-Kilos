@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="iconetitulo/ico/librastokg.ico"
+      type="image/x-icon"
+    />
+    <title>Conversor de Libras para Quilogramas</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto+Condensed:wght@700&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+      }
+
+      :root {
+        --acafrao: #ebc556;
+        --gunmetal: #24292f;
+        --white: #fff;
+        --black: #000;
+        --darkcharcoal: #2b2929;
+        --salmarinho: #f7f9f8;
+      }
+
+      .cabecalho {
+        color: var(--acafrao);
+        padding: 50px;
+        text-align: center;
+        font-family: "Roboto Condensed", sans-serif;
+        background-color: var(--gunmetal);
+      }
+
+      .conteudo-central {
+        font-family: "Open Sans", sans-serif;
+        background-color: var(--white);
+      }
+
+      .conteudo-central-titulo {
+        margin-top: 50px;
+        text-align: center;
+      }
+
+      .conteudo-div-texto1 {
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      .conteudo-div-texto2 {
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      .secao-imagem {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+        background-color: var(--gunmetal);
+      }
+
+      .secao-imagem-anilhas {
+        width: 900px;
+      }
+
+      .secao-calculo {
+        margin-top: 50px;
+        text-align: center;
+      }
+
+      .secao-calculo-div {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 60px;
+        margin-top: 50px;
+      }
+
+      .opcao-libras {
+        color: var(--white);
+        padding: 10px;
+        background-color: var(--gunmetal);
+      }
+
+      .calcular-btn {
+        border: 0;
+        padding: 10px;
+        text-align: center;
+      }
+
+      .botao-calcular {
+        border: 0;
+        color: var(--acafrao);
+        padding: 10px;
+        width: 100px;
+        height: 40px;
+        margin-top: 15px;
+        font-weight: 700;
+        background-color: var(--black);
+      }
+
+      .botao-calcular:hover {
+        cursor: pointer;
+        background-color: var(--darkcharcoal);
+      }
+
+      .opcao-quilos {
+        color: var(--white);
+        padding: 10px;
+        width: 160px;
+        background-color: var(--gunmetal);
+      }
+
+      .resultado {
+        padding: 10px;
+        text-align: center;
+      }
+
+      .rodape {
+        color: var(--white);
+        padding: 50px;
+        margin-top: 50px;
+        text-align: center;
+        font-family: "Roboto Condensed", sans-serif;
+        background-color: var(--black);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="cabecalho">
+      <h1>CONVERSOR DE LIBRAS PARA QUILOGRAMAS</h1>
+    </header>
+    <main class="conteudo-central">
+      <section>
+        <h2 class="conteudo-central-titulo">Olá!</h2>
+        <div class="conteudo-div-texto1">
+          <p>
+            Neste projeto será apresentado um Conversor de Libras para
+            Quilogramas. Para quem já chegou a frequentar<br />
+            academia sabe que algumas anilhas apresentam 45lbs ou 22lbs.
+          </p>
+        </div>
+        <div class="conteudo-div-texto2">
+          <p>
+            Então este projeto veio com a ideia de entender mais sobre a
+            conversão e que você não se confunda tanto<br />
+            quando ver uma anilha ou qualquer objeto com o sistema de peso de
+            libras.
+          </p>
+        </div>
+      </section>
+      <section class="secao-imagem">
+        <img
+          src="img/exemplo_libras.jpg"
+          class="secao-imagem-anilhas"
+          alt="Imagem Anilhas"
+        />
+      </section>
+      <section class="secao-calculo">
+        <p>
+          Faça a conversão de libras para quilos utilizando a divisão com o
+          valor de 2,205<br />
+          e de quilos para libras é multiplicando o mesmo valor.
+        </p>
+        <div class="secao-calculo-div">
+          <div>
+            <div class="opcao-libras">Libras</div>
+            <input
+              type="number"
+              class="calcular-btn"
+              id="input_conversao"
+              placeholder="Ex: 45lbs"
+            />
+          </div>
+          <input
+            type="button"
+            class="botao-calcular"
+            id="calcular_btn"
+            value="Calcular"
+          />
+          <div>
+            <div class="opcao-quilos">Quilogramas</div>
+            <div class="resultado">--</div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="rodape">
+      <h2>© Caio Gomes</h2>
+    </footer>
+
+    <script>
+      let texto_nome = document.querySelector(".conteudo-central-titulo");
+      let nome = prompt("Digite seu nome: ");
+      if (nome.length == 0) {
+        texto_nome.innerHTML = "Olá!";
+      } else {
+        texto_nome.innerHTML = `Olá, ${nome}`;
+      }
+
+      let input_conversao = document.getElementById("input_conversao");
+      let calcular = document.getElementById("calcular_btn");
+      let res = document.querySelector(".resultado");
+
+      calcular.addEventListener("click", function () {
+        let valorLibras = input_conversao.value;
+
+        if (valorLibras == 0) {
+          alert("Valor não inserido!");
+        } else {
+          let resultado = parseFloat(valorLibras / 2.205);
+          let resultadoFormatado = resultado.toFixed(2);
+          res.innerHTML = resultadoFormatado + " Kg";
+        }
+      });
+    </script>
+  </body>
+</html>
