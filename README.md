@@ -1,5 +1,12 @@
-# Libras-to-Kilos
-Projeto para converter um peso de Libras para Quilogramas.
+# 🔱 Libras to Kilos
+![](https://github.com/GomesKay/Libras-to-Kilos/assets/85319481/701262ca-0466-4f24-bbe0-a00edd634f6c)
 
-O objetivo deste projeto é fazer uma cálculo de conversão de libras para quilogramas.
-Surgiu essa ideia através de anilhas que tenham o seu peso em libras e dificulta saber o peso em quilogramas.
+## 🚀 Tecnologias
+Este projeto foi desenvolvido com:
+* HTML, CSS & JavaSCript
+
+## 💻 Projeto
+O objetivo deste projeto é fazer uma cálculo de conversão de Libras para Quilogramas.
+
+## 🖌️ Figma
+Link para os modelos deste projeto [Libras to Kilos](https://www.figma.com/file/POTDxxDYWta18idhovkYeW/Conversor-de-Libras-para-Quilogramas?type=design&node-id=1-2&mode=design&t=1G82PDvqlDizfZcX-0)
